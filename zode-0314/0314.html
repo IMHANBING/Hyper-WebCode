@@ -36,8 +36,59 @@
     console.log(obj2.name)
     obj2.work()
 
-    // 自己创建函数，产生对象————"工厂函数"
+    // 3.自己创建函数，产生对象————"工厂函数"
+    // 必须存在返回值
+    function CreateObj() {
+        var obj = {}
+        obj.name = 'name2'
+        obj.age = 20
+        obj.work = function () {
+            console.log('Hello')
+        }
+        return obj
+    }
 
+    // 调用工厂函数,批量生产对象
+    var obj3 = CreateObj()
+    var obj4 = CreateObj()
+
+    console.log(obj3, obj4)
+    console.log(obj3.age)
+    console.log(obj3.name)
+    obj3.work()
+
+    // 希望通过工厂函数，生产多个不完全一样对象
+    function CreateOBJ(n, a) {
+        var obj = {}
+        obj.name = n
+        obj.age = a
+        return obj
+    }
+
+    var obj5 = CreateOBJ('name3', 11)
+    var obj6 = CreateOBJ('name4', 22)
+    console.log(obj5)
+    console.log(obj6)
+
+    // 工厂函数，不同实现方法
+    function createOBJ(n, a) {
+        var obj = {
+            name: n,
+            age: a
+        }
+        return obj
+    }
+
+    var obj7 = createOBJ('name5', 33)
+    console.log(obj7)
+
+    // 4.创建构造函数，必须与new连用，最好不写return，首字母大写
+    function Create() {
+	    this.name = 'name6'
+	    this.age = 44
+    }
+    var obj8 = new Create()
+    console.log(obj8)
 
 </script>
 
