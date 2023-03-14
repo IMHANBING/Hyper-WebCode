@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>0310</title>
+</head>
+<body>
+
+<div id="mydiv" class="myclass" name="myname">
+    <h1 style="color: aquamarine">黑盒</h1>
+</div>
+
+<div>
+    <h1 style="color: lavender">白盒</h1>
+</div>
+
+<script>
+
+    let d = document.getElementById("mydiv")
+    console.log("getElementById:"+d.innerText)
+
+    // getElementsByTagName 获取的是多个，存在数组里
+    // d1是一个数组名
+    let d1 = document.getElementsByTagName('div')
+    console.log("getElementByTagName:"+d1[0].innerText)
+
+    let d2 = document.getElementsByClassName('myclass')
+    console.log("getElementByClassName:"+d2[0].innerText)
+
+    let d3 = document.querySelector('div')
+    console.log("querySelector:"+d3.innerText)
+
+    let d4 = document.querySelectorAll('div')
+    console.log("querySelectorAll:"+d4[0].innerText, d4[1].innerText)
+
+    let d5 = document.getElementsByName('myname')
+    console.log("getElementsByName:"+d5[0].innerText)
+
+</script>
+
+</body>
+</html>

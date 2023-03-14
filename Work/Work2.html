@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>Document</title>
+	<style>
+        td {
+            text-align: center;
+        }
+	</style>
+</head>
+<body onload="">
+<form action="">
+	<table id="mytable" align="center" border="1" bgcolor="blue" width="500px">
+		<caption>专业学生花名册</caption>
+		<tr>
+			<td>序号</td>
+			<td>姓名</td>
+			<td>学号</td>
+			<td>专业</td>
+		</tr>
+		<tr>
+			<td>1</td>
+			<td>花妮</td>
+			<td>20220001</td>
+			<td>计算机</td>
+		</tr>
+		<tr>
+			<td>1</td>
+			<td>花妮</td>
+			<td>20220001</td>
+			<td>计算机</td>
+		</tr>
+		<tr>
+			<td colspan="4">
+				<input type="button" id="btn1" value="设置新颜色" onclick="newColor()">
+				<input type="button" id="btn2" value="恢复原颜色" onclick="oldColor()">
+			</td>
+		</tr>
+	</table>
+</form>
+<script>
+
+    function choseRgb() {
+
+        // Math.random是生成0-1之间的随机数 *256 的范围就变成0.xx-255.7
+        // Math.floor 向下取整就变成 0-255
+        let r = Math.floor(Math.random() * 256);
+
+        let g = Math.floor(Math.random() * 256);
+
+        let b = Math.floor(Math.random() * 256);
+
+        // 拼接返回
+        return `rgb(${r},${g},${b})`;
+    }
+
+    let table = document.getElementById('mytable')
+    let c = document.createAttribute('bgcolor')
+    let color = table.getAttribute('bgcolor')
+
+    function newColor() {
+        let rgb = choseRgb()
+        console.log(rgb)
+        c.value = rgb
+        table.setAttributeNode(c)
+    }
+
+    function oldColor() {
+        c.value = color
+        table.setAttributeNode(c)
+    }
+
+</script>
+</body>
+</html>

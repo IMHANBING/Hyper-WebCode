@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>表格</title>
+	<style>
+        table {
+            color: lightseagreen;
+            margin: 0 auto;
+            table-layout: fixed;
+            width: 65%;
+            border: 2px dashed cornflowerblue;
+            border-collapse: collapse;
+            opacity: 0.89;
+        }
+
+        table:hover {
+            color: #66f9cf;
+            margin: 0 auto;
+            table-layout: fixed;
+            width: 65%;
+            border: #66f9cf 2px dashed;
+            border-collapse: collapse;
+            opacity: 0.89;
+        }
+
+        td {
+            text-align: center;
+        }
+
+        caption {
+            font-style: inherit;
+            font-size: 2em;
+            padding: 20px;
+            color: lightseagreen;
+            caption-side: top;
+            letter-spacing: 0.1em;
+            opacity: 0.8;
+        }
+
+        caption:hover {
+            font-style: inherit;
+            font-size: 2em;
+            padding: 20px;
+            color: #66f9cf;
+            caption-side: top;
+            letter-spacing: 0.1em;
+            opacity: 0.8;
+        }
+
+        input {
+            color: mediumslateblue;
+            background-color: aliceblue;
+            font-size: 20px;
+            border: 2px dashed cornflowerblue;
+            border-radius: 10px;
+        }
+
+        input:hover {
+            color: lavender;
+            background-color: slateblue;
+            border: 2px dotted aquamarine;
+            border-radius: 10px;
+        }
+
+        .container {
+            background: lavender;
+        }
+	</style>
+</head>
+<body onload="" class="container">
+<form action="">
+	<table id="mytable"
+	       align="center"
+	       border="1"
+	       bgcolor="aliceblue"
+	       cellspacing="0"
+	       cellpadding="10">
+		<caption>专业学生花名册</caption>
+		<tr>
+			<td>序号</td>
+			<td>姓名</td>
+			<td>学号</td>
+			<td>专业</td>
+		</tr>
+		<tr>
+			<td>1</td>
+			<td>花妮</td>
+			<td>20220001</td>
+			<td>计算机</td>
+		</tr>
+		<tr>
+			<td>1</td>
+			<td>花妮</td>
+			<td>20220001</td>
+			<td>计算机</td>
+		</tr>
+		<tr>
+			<td colspan="4">
+				<input type="button" value="设置新颜色" onclick="changeColor()">
+				&nbsp;&nbsp;&nbsp;&nbsp;
+				<input type="button" value="恢复原颜色" onclick="recColor()">
+			</td>
+		</tr>
+	</table>
+</form>
+<script>
+
+    console.log("千山暮雪，各自珍重")
+
+    let mytb = document.getElementById('mytable')
+    let c = document.createAttribute('bgcolor')
+    let color = mytb.getAttribute('bgcolor')
+
+    function changeColor() {
+        let colors = color16()
+        console.log(colors)
+        c.value = colors
+        mytb.setAttributeNode(c)
+    }
+
+    function recColor() {
+        c.value = color
+        mytb.setAttributeNode(c)
+    }
+
+    function color16() {//十六进制颜色随机
+        return '#' + Math.random().toString(16).substr(2, 6)
+    }
+
+</script>
+</body>
+</html>

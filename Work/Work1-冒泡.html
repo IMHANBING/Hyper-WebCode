@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <title></title>
+    <style>
+        #grand {
+            background-color: aquamarine;
+            height: 500px;
+            width: 500px;
+        }
+
+        #father {
+            background-color: aliceblue;
+            height: 400px;
+            width: 400px;
+            margin-left: 50px;
+        }
+
+        #son {
+            background-color: lavender;
+            height: 300px;
+            width: 300px;
+            margin-left: 50px;
+        }
+    </style>
+</head>
+<body>
+
+<!-- 事件处理过程 -->
+<!-- 1.阶段捕获阶段window出发找到目标节点的过程 -->
+<!-- 2.目标阶段，执行事件处理函数 -->
+<!-- 3.冒泡阶段，从目标开始到跟结束，如果父级元素具有和子元素
+一样的事件，执行父级元素-->
+<!-- 事件，执行父级元素 -->
+<!-- 事件委托：是利用冒泡机制实现，子元素的事件由父元素来执行 -->
+
+<div id="grand" onclick="alert('grand')">
+    <div id="father" onclick="alert('father')">
+        <div id="son" onclick="alert('son')"></div>
+    </div>
+</div>
+
+<script>
+    let son_div = document.getElementById('son')
+    son_div.onclick = function (e) {
+        alert('son div')
+        e.stopPropagation()
+    }
+</script>
+
+</body>
+</html>

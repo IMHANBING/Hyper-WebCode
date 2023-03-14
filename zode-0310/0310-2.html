@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>0310-2</title>
+    <style>
+        p{
+            color: lavender;
+            font-size: 2em;
+            font-family: Broadway;
+        }
+    </style>
+</head>
+<body>
+
+<div id="mydiv" class="myclass" name="myname"></div>
+
+<script>
+
+    // 将字符直接显示在页面上
+    // document.write("将字符直接显示在页面上")
+
+    // 创建一个新节点
+    let newp = document.createElement('p')
+    newp.innerText = "Yasoong"
+    // 获取父节点
+    let fdiv = document.getElementById('mydiv')
+    // 新建节点作为 mydiv 的孩子
+    fdiv.appendChild(newp)
+
+</script>
+
+</body>
+</html>

@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>0310-1</title>
+</head>
+<body>
+
+<div id="mydiv" class="myclass" name="myname">
+    <h1 style="color: aquamarine">黑盒</h1>
+
+    <div>
+        <h1 style="color: lavender">白盒</h1>
+    </div>
+
+</div>
+
+
+<script>
+
+    // 获取body元素
+    let fdiv = document.getElementById('mydiv')
+    let b0 = document.querySelector('body')
+    let b1 = document.body
+    console.log(fdiv.innerHTML)
+    console.log(document.documentElement)
+    console.log(b0.innerText)
+    console.log(b1.innerText)
+    console.log(b1.innerHTML)
+    // 1.innerText：输出标签文本本身的内容+子标签文本内容
+    // 2.inner HTML：输出子标签及内容
+
+
+    // 通过子元素获取父元素
+    let b3 = fdiv.parentElement.parentElement.parentElement
+    let b4 = fdiv.parentNode.parentNode.parentNode
+    console.log(b3)
+    console.log(b4)
+    /*
+    parentElement与parentNode的区别是获取根节点document时，
+    parentElement获取不到NULL，parentNode输出的#document
+    */
+
+</script>
+
+</body>
+</html>

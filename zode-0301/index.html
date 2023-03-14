@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8" />
+		<title>HBuilder Test</title>
+	</head>
+	<body>
+		<!-- 事件与节点绑定 -->
+		<!-- 静态绑定，简单不利于代码维护 -->
+		<p onclick="alert('Hello')">你好</p>
+		<p onclick="fun()">天气不错</p>
+		
+		<!-- 动态绑定 -->
+		<p id="id1">逛超市</p>
+		
+		<script>
+			
+			// 函数
+			function fun(){
+				alert("Yasoong")
+			}
+			// 第一步获取元素
+			var my_id = document.getElementById('id1')
+			// 添加事件
+			// 事件对象记录事件发生时的相关信息，比如：谁产生的事件，事件的类型是什么
+			my_id.onclick = function(e){
+				// e.target:对象名——谁产生的
+				console.log(e.target)
+				// e.type:事件类型
+				console.log(e.type)
+			}
+			/* 
+			e不是自己定义的，是当事件发生时系统自动形成的，
+			当事件处理结束时，自动消亡
+			*/
+		</script>
+	</body>
+</html>

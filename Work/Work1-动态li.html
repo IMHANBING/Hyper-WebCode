@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Dynamic li</title>
+</head>
+<body>
+
+<ul id='ul1'>
+    <li>✨</li>
+    <li>🌈</li>
+    <li>☔️</li>
+    <li>✈️</li>
+</ul>
+
+<button onclick="add()">添加节点</button>
+<button onclick="del()">删除节点</button>
+
+
+<script>
+
+    let new_ul = document.getElementById("ul1");
+
+    function add() {
+        let new_li = document.createElement('li');
+        new_li.innerHTML = "💖"
+        new_ul.append(new_li)
+    }
+
+    function del() {
+        new_ul.removeChild(new_ul.lastChild)
+    }
+
+    // 获取ul标签
+    let arr_ul = document.getElementById('ul1')
+    // 将单击事件绑定ul上
+    arr_ul.onclick = function () {
+        console.log('点击ul标签 gbi')
+    }
+
+    //  1.获取li标签
+    let arr_li = document.getElementsByTagName('li')
+    // 绑定事件，因为是多个使用循环，arr_li是对象数组
+    for (let item of arr_li) {
+        item.onclick = function () {
+            console.log('点击li标签 gbtn')
+        }
+    }
+
+</script>
+
+</body>
+</html>
